@@ -1,5 +1,22 @@
 import React from 'react';
 import './Mobile.css';
+// import kotlin from '../assets/kotlin.png';
+// import android from '../assets/androidStudio.png';
+// import flutter from '../assets/flutter.svg';
+// import swift from '../assets/swift.svg';
+// import reactLogo from '../assets/react.svg';
+// import pwa from '../assets/pwaIcon.png';
+// import azure from './src/assets/azure.png';
+// import aws from './src/assets/aws.png';
+import kotlin from '../assets/kotlin.png';
+import android from '../assets/androidStudio.png';
+import flutter from '../assets/flutter.svg';
+import swift from '../assets/swift.svg';
+import reactLogo from '../assets/react.svg';
+import pwa from '../assets/pwaIcon.png';
+import azure from '../assets/azure.png';  // fixed here
+import aws from '../assets/aws.png';      // fixed here
+
 
 const MobileAppOverview = () => {
   return (
@@ -19,3 +36,34 @@ const MobileAppOverview = () => {
 };
 
 export default MobileAppOverview;
+
+
+
+
+const techLogos = [
+  { src: kotlin, alt: 'Kotlin' },
+  { src: android, alt: 'Android Studio' },
+  { src: flutter, alt: 'Flutter' },
+  { src: swift, alt: 'Swift' },
+  { src: reactLogo, alt: 'React' },
+  { src: pwa, alt: 'PWA' },
+  { src: azure, alt: 'Azure' },
+  { src: aws, alt: 'AWS' },
+];
+
+const TechnologiesSection = () => {
+  return (
+    <div className="technologies-container">
+      <h2 className="tech-title">Technologies we use</h2>
+      <div className="tech-grid">
+        {techLogos.map((logo, index) => (
+          <div key={index} className="tech-icon">
+            <img src={logo.src} alt={logo.alt} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export { TechnologiesSection};

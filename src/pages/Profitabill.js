@@ -8,6 +8,10 @@ import advancedBilling from "../assets/advancedBilling.png";
 import intelligentReports from "../assets/intelligentReports.png";
 import marketingEngine from "../assets/marketingEngine.png";
 import appointments from "../assets/appointments.png";
+// import icon1 from './assets/icon1.png';
+// import icon2 from './assets/icon2.png';
+// import icon3 from './assets/icon3.png';
+// import icon4 from './assets/icon4.png';
 
 const Profitabill = () => {
   return (
@@ -40,6 +44,37 @@ const Review = () => {
      </section>
    );
  };
+
+
+
+// const statsData = [
+//   { icon: icon1, value: '50+', label: 'Features', color: '#36f5b7' },
+//   { icon: icon2, value: '20,000$+', label: 'Transaction value', color: '#ff9900' },
+//   { icon: icon3, value: '3 months', label: 'To Build', color: '#9b4dff' },
+//   { icon: icon4, value: '50,000+', label: 'Visitors', color: '#ff5c5c' },
+// ];
+
+// const StatsSection = () => {
+//   return (
+//     <div className="stats-container">
+//       <h2 className="stats-title">Stats</h2>
+//       <div className="stats-grid">
+//         {statsData.map((stat, index) => (
+//           <div key={index} className="stat-box">
+//             <div
+//               className="stat-icon"
+//               style={{ backgroundColor: stat.color }}
+//             >
+//               <img src={stat.icon} alt={stat.label} />
+//             </div>
+//             <div className="stat-value">{stat.value}</div>
+//             <div className="stat-label">{stat.label}</div>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
 
 
 
@@ -130,7 +165,7 @@ const CallToAction = () => {
 
 export  {CallToAction};
 
-
+// export { StatsSection};
 export {Features};
 
 export {Review}
