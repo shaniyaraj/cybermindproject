@@ -20,7 +20,7 @@ import demo2 from '../src/assets/demo2.png';
 import freelance1 from './assets/freelance1.png';
 import freelance2 from './assets/freelance2.png';
 import Profitabill,{Review,Features,CallToAction} from './pages/Profitabill';
-import MobileAppOverview,{TechnologiesSection } from './pages/Mobile';
+import MobileAppOverview from './pages/Mobile';
 
 // import aatchitamizh from './assets/aatchitamizhlogo.webp';
 // import BB from './assets/BBlogo.png';
@@ -54,11 +54,9 @@ function App() {
       <Callbutton />
      <Profitabill />
       <Review />
-      {/* <StatsSection /> */}
       <Features />
       <CallToAction /> 
       <MobileAppOverview />
-      <TechnologiesSection />
       {/* <BrandCarousel />
       <CardsContainer /> */}
       <ContactForm />
