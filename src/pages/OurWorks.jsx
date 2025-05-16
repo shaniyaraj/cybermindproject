@@ -100,7 +100,7 @@ function OurWorks() {
   return (
     <div className="portfolio-container">
       <h1 className="portfolio-title">Our Works</h1>
-      
+
       <div className="portfolio-grid">
         {portfolioData.map((project) => (
           <div key={project.id} className={`portfolio-card `}>
@@ -122,3 +122,4 @@ function OurWorks() {
 }
 
 export default OurWorks;
+

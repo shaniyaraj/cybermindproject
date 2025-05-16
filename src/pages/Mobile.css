@@ -34,7 +34,7 @@ text-align: center;
 
 .tech-grid {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: center;
   gap: 40px;
 }
@@ -59,4 +59,92 @@ text-align: center;
   width: 60px;
   height: 60px;
   object-fit: contain;
+} 
+
+.services-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 10%;
+  position: relative;
+  background: #f9f9f9;
+  overflow: hidden;
 }
+
+.services-content h1 {
+  font-size: 48px;
+  font-weight: bold;
+  color: #222;
+}
+
+.services-content h1 span {
+  color: #222;
+}
+
+.services-gallery {
+  position: relative;
+  width: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.services-gallery img {
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.services-gallery img:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+/* Floating devices positioning like in your image */
+.service-img.img-1 {
+  transform: rotate(-10deg) translate(-30px, -20px);
+}
+
+.service-img.img-2 {
+  transform: rotate(5deg) translate(0px, -40px);
+}
+
+.service-img.img-3 {
+  transform: rotate(0deg) translate(10px, 10px);
+}
+
+.service-img.img-4 {
+  transform: rotate(-5deg) translate(20px, -30px);
+}
+
+.service-img.img-5 {
+  transform: rotate(10deg) translate(-10px, 20px);
+}
+
+/* Triangles/Decorative shapes (optional if you want to match the design) */
+.services-section::before,
+.services-section::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  opacity: 0.5;
+}
+
+.services-section::before {
+  border-width: 0 40px 40px 0;
+  border-color: transparent #f5b700 transparent transparent;
+  top: 20%;
+  left: 30%;
+}
+
+.services-section::after {
+  border-width: 0 50px 50px 0;
+  border-color: transparent #9c27b0 transparent transparent;
+  top: 10%;
+  right: 10%;
+}
+

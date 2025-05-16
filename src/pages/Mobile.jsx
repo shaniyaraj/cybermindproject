@@ -1,13 +1,5 @@
 import React from 'react';
 import './Mobile.css';
-// import kotlin from '../assets/kotlin.png';
-// import android from '../assets/androidStudio.png';
-// import flutter from '../assets/flutter.svg';
-// import swift from '../assets/swift.svg';
-// import reactLogo from '../assets/react.svg';
-// import pwa from '../assets/pwaIcon.png';
-// import azure from './src/assets/azure.png';
-// import aws from './src/assets/aws.png';
 import kotlin from '../assets/kotlin.png';
 import android from '../assets/androidStudio.png';
 import flutter from '../assets/flutter.svg';
@@ -16,6 +8,31 @@ import reactLogo from '../assets/react.svg';
 import pwa from '../assets/pwaIcon.png';
 import azure from '../assets/azure.png';  // fixed here
 import aws from '../assets/aws.png';      // fixed here
+import ban1 from '../assets/ban1.png';
+import ban2 from '../assets/ban1.png';
+import ban3 from '../assets/ban3.png';
+import ban4 from '../assets/ban4.png';
+import ban5 from '../assets/ban5.png';
+
+const Banner = () => {
+  const serviceImages = [ban1,ban2,ban3,ban4,ban5];
+
+  return (
+    <section className="services-section">
+      <div className="services-content">
+        <h1><span>Services</span> <br />Offered</h1>
+      </div>
+      <div className="services-gallery">
+        {serviceImages.map((img, index) => (
+          <img key={index} src={img} alt={`service-${index+1}`} className={`service-img img-${index+1}`} />
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default Banner;
+
 
 
 const MobileAppOverview = () => {
@@ -35,7 +52,7 @@ const MobileAppOverview = () => {
   );
 };
 
-export default MobileAppOverview;
+export  {MobileAppOverview};
 
 
 

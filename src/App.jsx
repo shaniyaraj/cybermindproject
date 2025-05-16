@@ -11,31 +11,19 @@ import './App.css';
 import ContactForm from './pages/Contact';
 import Careers from './pages/Careers';
 import WhyUs from './pages/WhyUs';
- import Farmyng, { LocalizedNewsFeed,ListingPage,MarketPage,AgriPage, Overview ,Callbutton} from "../src/pages/Farmyng";
-
-// import main2 from '../src/assets/main2.png'
+import Farmyng, { LocalizedNewsFeed,ListingPage,MarketPage,AgriPage, Overview ,Callbutton} from "./pages/Farmyng";
+import About from "./pages/About";
+import Info from "./pages/Bcontact";
 import Services from './pages/Services';
 import demo1 from '../src/assets/demo1.png';
 import demo2 from '../src/assets/demo2.png';
 import freelance1 from './assets/freelance1.png';
 import freelance2 from './assets/freelance2.png';
 import Profitabill,{Review,Features,CallToAction} from './pages/Profitabill';
-import MobileAppOverview from './pages/Mobile';
-
-// import aatchitamizh from './assets/aatchitamizhlogo.webp';
-// import BB from './assets/BBlogo.png';
-// import captain from './assets/captainLogo.webp';
-// import DMK from './DmkLogo.webp';
-// import farmyng from './farmyngclub.png';
-// import hyperlaunch from './assets/hyperlaunch.png';
-// import inesh from './assets/inesh.webp';
-// import ivb from './ivbLogo.jpg';
-// import jobzshala from './assets/jobzshala.png';
-// import moneyrush from './assets/MoneyRushLogo.webp';
-// import ovhqlogo from './ovhqlogo.png';
-// import sarkarias from './sarakariaslogo.png';
-// import schoolnet from './schoolnetLogo.webp';
-// import skilllync from './skillLyncLogo.png';
+import Banner from './pages/Mobile';
+import {MobileAppOverview,TechnologiesSection} from './pages/Mobile'
+import OurWorks from './pages/OurWorks';
+import BlogPage from './pages/Blog';
 
 
 
@@ -56,15 +44,19 @@ function App() {
       <Review />
       <Features />
       <CallToAction /> 
+      <Banner />
       <MobileAppOverview />
-      {/* <BrandCarousel />
-      <CardsContainer /> */}
+      <TechnologiesSection />
       <ContactForm />
       <Careers />
       <AppscaleRecognition />
       <WhyUs />
       <Services />
       <IdeaSection />
+       <BlogPage /> 
+      <Info />
+      <About />
+      <OurWorks />
       <Footer /> 
     </div>
   );
@@ -140,11 +132,11 @@ function HeroSection() {
           <span className="gradient-text">Fast<br /></span>
           <span className="gradient-text">Reliable <br /></span>
           <span className="gradient-text"> Scalable<br /></span>
-           <span className="gradient-text"><br /></span>
+           <span className="gradient-text">Secure<br /></span>
         </h1>
         
         <p className="hero-subtitle">
-          We specialize in creating custom software solutions from 
+          We specialize in creating custom software solutions from <br />
           the ground up for startups and mid-sized enterprises.
         </p>
         
@@ -398,83 +390,6 @@ function WorksSection() {
   );
 }
  
-// function BrandCarousel() {
-//   // Array of brand data with logos and names
-  //  const brands = [
-  //   { name: "Acework Engineers", logo: "https://via.placeholder.com/150x60/f8f9fa/212529?text=Acework" },
-  //   { name: "Sarkar IAS Academy", logo: "https://via.placeholder.com/150x60/f8f9fa/212529?text=Sarkar" },
-  //    { name: "Inesh", logo: "https://via.placeholder.com/150x60/f8f9fa/212529?text=Inesh" },
-  //    { name: "Captain Fresh", logo: "https://via.placeholder.com/150x60/f8f9fa/212529?text=Captain+Fresh" },
-  //    { name: "DMK", logo: "https://via.placeholder.com/150x60/f8f9fa/212529?text=DMK" },
-  //    { name: "IAS Study Circle", logo: "https://via.placeholder.com/150x60/f8f9fa/212529?text=IAS" },
-  //   { name: "EVB", logo: "https://via.placeholder.com/150x60/f8f9fa/212529?text=EVB" },
-  //   { name: "MoneyRush", logo: "https://via.placeholder.com/150x60/f8f9fa/212529?text=MoneyRush" },
-  //   { name: "Overqualified Housewives", logo: "https://via.placeholder.com/150x60/f8f9fa/212529?text=Overqualified" },
-  //    { name: "JobzShala", logo: "https://via.placeholder.com/150x60/f8f9fa/212529?text=JobzShala" },
-  //   { name: "TechFlow", logo: "https://via.placeholder.com/150x60/f8f9fa/212529?text=TechFlow" },
-  //  { name: "GreenLeaf", logo: "https://via.placeholder.com/150x60/f8f9fa/212529?text=GreenLeaf" },
-  //   { name: "BlueOcean", logo: "https://via.placeholder.com/150x60/f8f9fa/212529?text=BlueOcean" },
-  //   { name: "RedPeak", logo: "https://via.placeholder.com/150x60/f8f9fa/212529?text=RedPeak" },
-  //  ];
-
-  // const [position, setPosition] = useState(0);
-  
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setPosition((prevPosition) => {
-  //       if (prevPosition <= -100) {
-  //         return 0;
-  //       }
-  //       return prevPosition - 0.5;
-  //     });
-  //   }, 50);
-    
-//     return () => clearInterval(interval);
-//   }, []);
-  
-//   const displayBrands = [...brands, ...brands];
-  
-//   return (
-//     <div className="flex flex-col items-center w-full bg-gray-50 py-12 overflow-hidden">
-//       <h1 className="text-4xl font-bold text-gray-800 mb-12">Brands that trust us.</h1>
-      
-//       <div className="relative w-full overflow-hidden">
-//         <div 
-//           className="flex items-center" 
-//           style={{ 
-//             transform: `translateX(${position}%)`,
-//             transition: position === 0 ? 'none' : 'transform 0.5s linear',
-//             width: '200%' // Make the container twice as wide for seamless looping
-//           }}
-//         >
-//           {displayBrands.map((brand, index) => (
-//             <div 
-//               key={index} 
-//               className="flex-none px-6 flex items-center justify-center"
-//               style={{ width: '7.14%' }} // 100% / 14 brands = ~7.14% per brand
-//             >
-//               <img 
-//                 src={brand.logo} 
-//                 alt= {`${brand.name} logo`}
-//                 className="max-h-16 max-w-full object-contain"
-//               />
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-      
-//       <div className="absolute bottom-0 left-0 right-0">
-//         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" className="w-full">
-//           <path 
-//             fill="#FFFFFF" 
-//             fillOpacity="1" 
-//             d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
-//           ></path>
-//         </svg>
-//       </div>
-//     </div>
-//   );
-// }
 
 const Card = ({ title, images, features }) => {
   const [isHovered, setIsHovered] = useState(false);
