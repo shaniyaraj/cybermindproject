@@ -164,7 +164,7 @@ function HeroSection() {
         </h1>
 
         <p className="hero-subtitle">
-          We specialize in creating custom software solutions from
+          We specialize in creating custom software solutions from<br />
           the ground up for startups and mid-sized enterprises.
         </p>
 

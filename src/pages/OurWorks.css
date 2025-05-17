@@ -50,6 +50,9 @@ body {
 
 
 
+.portfolio-card:hover{
+ box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
 
 
 .purple-gradient {
@@ -61,8 +64,19 @@ height: 400px;
 .orange-gradient {
   background: linear-gradient(140deg, #f97316 0%, #fb923c 100%);
   height:400px;
+  width:600px;
+}
+/* .peach-gradient{
+  background: linear-gradient(140deg, #c978b7 0%, #e2afd5 100%);
+   height:400px;
   width:500px;
 }
+.green-gradient{
+  background: linear-gradient(140deg, #37aa6b 0%, #96f1bf 100%);
+   height:400px;
+  width:500px;
+} */
+
 
 .card-label {
   color: white;

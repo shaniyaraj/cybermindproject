@@ -4,6 +4,7 @@ import kotlin from '../assets/kotlin.png';
 import android from '../assets/androidStudio.png';
 import flutter from '../assets/flutter.svg';
 import swift from '../assets/swift.svg';
+
 import reactLogo from '../assets/react.svg';
 import pwa from '../assets/pwaIcon.png';
 import azure from '../assets/azure.png';  // fixed here
@@ -195,13 +196,7 @@ function Data() {
       gradient: 'orange-gradient',
       features: ['Subscription', 'Freelance Directory', 'Job Search', 'JobAlerts'],
     },
-     {
-      id: 8,
-      title: 'Learning Platform',
-      image: learn,
-      gradient: 'orange-gradient',
-      features: ['Subscription', 'Freelance Directory', 'Job Search', 'JobAlerts'],
-    },
+     
   ];
   return (
     <div className="portfolio-container">
