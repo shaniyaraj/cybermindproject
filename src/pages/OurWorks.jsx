@@ -3,10 +3,18 @@ import React from 'react';
 import './OurWorks.css';
 
 // Import images
-import demoPortalImg from '../assets/baabee2.webp';
+import demoPortalImg from '../assets/demo1.png';
 import freelancePlatformImg from '../assets/freelance2.png';
 import hyperlaunchImg from '../assets/hyperlaunch.png';
 import marketingJobverseImg from '../assets/marketing2.webp';
+import usthav from '../assets/uthsav.webp';
+import Farmyng from '../assets/farm2.webp';
+import sales from '../assets/sales1.webp';
+import learn from '../assets/learn2.webp';
+import Profitabill from '../assets/profitable1.webp';
+import baabee from '../assets/baabee2.webp';
+import inesh from '../assets/inesh2.webp';
+import dmkImage from '../assets/dmk2.webp';
 
 function OurWorks() {
   // Portfolio data array
@@ -42,56 +50,56 @@ function OurWorks() {
     {
       id: 5,
       title: 'Uthsav',
-      image: hyperlaunchImg,
+      image: usthav,
       gradient: 'purple-gradient',
       features: ['LMS', 'Job Search'],
     },
     {
       id: 6,
       title: 'Farmyng',
-      image: marketingJobverseImg,
+      image: Farmyng,
       gradient: 'orange-gradient',
       features: ['Subscription', 'Freelance Directory', 'Job Search', 'JobAlerts'],
     },
     {
       id: 7,
       title: 'Sales CRM',
-      image: hyperlaunchImg,
+      image: sales,
       gradient: 'purple-gradient',
       features: ['LMS', 'Job Search'],
     },
     {
       id: 8,
       title: 'Learning Platform',
-      image: marketingJobverseImg,
+      image: learn,
       gradient: 'orange-gradient',
       features: ['Subscription', 'Freelance Directory', 'Job Search', 'JobAlerts'],
     },
     {
       id: 9,
       title: 'Profitabill',
-      image: hyperlaunchImg,
+      image: Profitabill,
       gradient: 'purple-gradient',
       features: ['LMS', 'Job Search'],
     },
     {
       id: 10,
       title: 'BabeeTv',
-      image: marketingJobverseImg,
+      image: baabee,
       gradient: 'orange-gradient',
       features: ['Subscription', 'Freelance Directory', 'Job Search', 'JobAlerts'],
     },
     {
       id: 11,
       title: 'inesh',
-      image: hyperlaunchImg,
+      image: inesh,
       gradient: 'purple-gradient',
       features: ['LMS', 'Job Search'],
     },
     {
       id: 12,
       title: 'Sakkarapani',
-      image: marketingJobverseImg,
+      image: dmkImage,
       gradient: 'orange-gradient',
       features: ['Subscription', 'Freelance Directory', 'Job Search', 'JobAlerts'],
     },

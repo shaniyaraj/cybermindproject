@@ -63,7 +63,7 @@ const WhyUs = () => {
             <span className="check-icon">✔</span>
             <div>
               <h3>Rapid Application Development</h3>
-              <p>We deliver meaningful products quickly. The solutions we <br />
+              <p>We deliver meaningful products quickly. The solutions we
               build respond to real-world market demands.</p>
             </div>
           </div>
@@ -71,7 +71,7 @@ const WhyUs = () => {
             <span className="check-icon">✔</span>
             <div>
               <h3>100% money back guarantee</h3>
-              <p>We won't charge you a penny if you are not satisfied with <br />
+              <p>We won't charge you a penny if you are not satisfied with
                the output - never happened.</p>
             </div>
           </div>

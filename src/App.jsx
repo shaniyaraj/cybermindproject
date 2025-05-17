@@ -11,20 +11,36 @@ import './App.css';
 import ContactForm from './pages/Contact';
 import Careers from './pages/Careers';
 import WhyUs from './pages/WhyUs';
-import Farmyng, { LocalizedNewsFeed,ListingPage,MarketPage,AgriPage, Overview ,Callbutton} from "./pages/Farmyng";
-import About from "./pages/About";
-import Info from "./pages/Bcontact";
+import Farmyng, { LocalizedNewsFeed, ListingPage, MarketPage, AgriPage, Overview, Callbutton } from "../src/pages/Farmyng";
 import Services from './pages/Services';
 import demo1 from '../src/assets/demo1.png';
 import demo2 from '../src/assets/demo2.png';
 import freelance1 from './assets/freelance1.png';
 import freelance2 from './assets/freelance2.png';
-import Profitabill,{Review,Features,CallToAction} from './pages/Profitabill';
-import Banner from './pages/Mobile';
-import {MobileAppOverview,TechnologiesSection} from './pages/Mobile'
+import Profitabill, { Review, Features, CallToAction } from './pages/Profitabill';
+// import Banner from './pages/Mobile';
+import Banner, {MobileAppOverview,Carousel,TechnologiesSection,Project } from './pages/Mobile';
+import Collection, {Webreview,Slider,Technology,Data } from './pages/Web';
 import OurWorks from './pages/OurWorks';
-import BlogPage from './pages/Blog';
-
+import Blog from './pages/Blog';
+import About from './pages/About';
+import Info from './pages/Bcontact';
+import aatchitamizh from './assets/aatchitamizhlogo.webp';
+import BB from './assets/BBlogo.png';
+import captain from './assets/captainLogo.webp';
+import DMK from './assets/DmkLogo.webp';
+import farmyng from './assets/farmyngclub.png';
+import hyperlaunch from './assets/hyperlaunch.png';
+import inesh from './assets/inesh.webp';
+import ivb from './assets/ivbLogo.jpg';
+import jobzshala from './assets/jobzshala.png';
+import moneyrush from './assets/MoneyRushLogo.webp';
+import ovhqlogo from './assets/ovhqlogo.png';
+import schoolnet from './assets/schoolnetLogo.webp';
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
 
 
 function App() {
@@ -33,31 +49,39 @@ function App() {
       <Header />
       <HeroSection />
       <WorksSection />
+      <BrandCarousel />
+      <OurWorks />
       <Farmyng />
       <Overview />
       <LocalizedNewsFeed />
       <ListingPage />
       <MarketPage />
-      <AgriPage /> 
+      <AgriPage />
       <Callbutton />
-     <Profitabill />
+      <Profitabill />
       <Review />
       <Features />
-      <CallToAction /> 
+      <CallToAction />
       <Banner />
       <MobileAppOverview />
+      <Carousel />
       <TechnologiesSection />
+      <Project />
+      <Collection />
+      <Webreview />
+      <Slider />
+      <Technology />
+      <Data />
       <ContactForm />
       <Careers />
       <AppscaleRecognition />
       <WhyUs />
       <Services />
       <IdeaSection />
-       <BlogPage /> 
-      <Info />
+      <Blog />
       <About />
-      <OurWorks />
-      <Footer /> 
+      <Info />
+      <Footer />
     </div>
   );
 }
@@ -65,23 +89,23 @@ function App() {
 function Header() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
-  
+
   return (
     <header className="header">
       <div className="logo-container">
         <h1 className="logo-text">CyberMind Works</h1>
       </div>
-      
+
       <nav className="main-nav">
         <ul className="nav-list">
           <li className="nav-item"><a href="#portfolio">Portfolio</a></li>
-          
+
           <li className="nav-item dropdown">
             <a href="#services" onClick={(e) => {
               e.preventDefault();
               setServicesOpen(!servicesOpen);
             }}>
-              Services 
+              Services
               <svg className="dropdown-icon" width="16" height="16" viewBox="0 0 24 24">
                 <path d="M7 10l5 5 5-5H7z" />
               </svg>
@@ -92,18 +116,18 @@ function Header() {
                 <li><a href="#mobile-apps">Mobile Apps</a></li>
               </ul>
             )}
-          </li> 
-                  
-          
+          </li>
+
+
           <li className="nav-item dropdown">
             <a href="#products" onClick={(e) => {
               e.preventDefault();
               setProductsOpen(!productsOpen);
             }}>
-              Products 
+              Products
               <svg className="dropdown-icon" width="16" height="16" viewBox="0 0 24 24">
                 <path d="M7 10l5 5 5-5H7z" />
-              </svg> 
+              </svg>
             </a>
             {productsOpen && (
               <ul className="dropdown-menu">
@@ -112,12 +136,12 @@ function Header() {
               </ul>
             )}
           </li>
-          
+
           <li className="nav-item"><a href="#blog">Blog</a></li>
           <li className="nav-item"><a href="#careers">Careers</a></li>
         </ul>
       </nav>
-      
+
       <button className="contact-button">Contact Us</button>
     </header>
   );
@@ -128,18 +152,22 @@ function HeroSection() {
     <section className="hero-section">
       <div className="hero-content">
         <h1 className="hero-title">
-          Get a software for your business that is 
-          <span className="gradient-text">Fast<br /></span>
-          <span className="gradient-text">Reliable <br /></span>
-          <span className="gradient-text"> Scalable<br /></span>
-           <span className="gradient-text">Secure<br /></span>
+          Get a software for your <br /> business that is
+          <span className='scrolling-words-wrapper'>
+            <span className='scrolling-words gradient-text'>
+              <div className='gradient-text'>Fast</div>
+              <div className='gradient-text'>Reliable</div>
+              <div className='gradient-text'>Scalable</div>
+              <div className='gradient-text'>Secure</div>
+            </span>
+          </span>
         </h1>
-        
+
         <p className="hero-subtitle">
-          We specialize in creating custom software solutions from <br />
+          We specialize in creating custom software solutions from
           the ground up for startups and mid-sized enterprises.
         </p>
-        
+
         <div className="trusted-by">
           <p>Trusted by</p>
           <div className="trusted-logo">
@@ -153,104 +181,104 @@ function HeroSection() {
 }
 const projectsData = {
   enterprise: [
-      {
-        title: '5 Million + leads in CRM',
-        description: 'Slick application with complex tailor made business reports rendered in seconds - all while munching huge amounts of dataicon',
-        image: Enterprise,
-      },
-      {
-        title:'Near real-time Lead Prioritization',
-        description:'Get an agent assigned to your hot leads in few seconds all while running complicated lead assignment and prioritization algorithms',
-         image: Enterprise,
+    {
+      title: '5 Million + leads in CRM',
+      description: 'Slick application with complex tailor made business reports rendered in seconds - all while munching huge amounts of dataicon',
+      image: Enterprise,
     },
     {
-        title:'360 degree tracking across products',
-        description:'Track every activity of a lead - website visits, form fills, inbound calls, emails, social media ads and more..',
-         image: Enterprise,
+      title: 'Near real-time Lead Prioritization',
+      description: 'Get an agent assigned to your hot leads in few seconds all while running complicated lead assignment and prioritization algorithms',
+      image: Enterprise,
+    },
+    {
+      title: '360 degree tracking across products',
+      description: 'Track every activity of a lead - website visits, form fills, inbound calls, emails, social media ads and more..',
+      image: Enterprise,
     }
-    ],
-    learning: [
-      {
-        title: 'Coding Judge, Audio/Video tests',
-        description:'We built a platform that can host MCQs, Coding questions, Audio, Video (Listening, Reading tests), File submission.',
-        image: realTimeApp ,
-      },
-      {
-        title: 'Student skill profilling',
-        description: 'Complete skills profiling of a student, areas of strength/weakness. Suggestions to improve the same.',
-        image: realTimeApp,
-      },
-      {
-        title: 'AI integrated- GPT 3.5',
-        description: 'Automated creation of question banks, assessment of subjective questions, and crafting individualized reports for students.',
-        image: realTimeApp,
-      },
-    ],
-    interactive: [
-      {
-        title: 'Realtime multi user collaborative editor',
-        description: 'Google docs like interactivity and notion like interface built into one.',
-       image: interactive,
+  ],
+  learning: [
+    {
+      title: 'Coding Judge, Audio/Video tests',
+      description: 'We built a platform that can host MCQs, Coding questions, Audio, Video (Listening, Reading tests), File submission.',
+      image: realTimeApp,
+    },
+    {
+      title: 'Student skill profilling',
+      description: 'Complete skills profiling of a student, areas of strength/weakness. Suggestions to improve the same.',
+      image: realTimeApp,
+    },
+    {
+      title: 'AI integrated- GPT 3.5',
+      description: 'Automated creation of question banks, assessment of subjective questions, and crafting individualized reports for students.',
+      image: realTimeApp,
+    },
+  ],
+  interactive: [
+    {
+      title: 'Realtime multi user collaborative editor',
+      description: 'Google docs like interactivity and notion like interface built into one.',
+      image: interactive,
       //  isSpecialLayout: true,
-      },
-      {
-        title:'Not just Text',
-        description:'Editor supports MCQs, Coding editor and many such components built according to client’s needs',
-        image:interactive,
-      },
-      {
-        title:'Version control, Auto save and more...',
-        description:'WebRTC based editor, very fast. Supports large number of users. Content exportable as E-Books, PPT, Webpage.',
-        image:interactive,
-      },
-    ],
-    data: [
-      {
-        title: '100,000,000 + records migrated',
-        description:'Handling large amounts of data, we have migrated entire data store for a client with very minimal infra cost',
-       image: dataHeavy,
-      },
-      {
-        title: 'Tera bytes of fast data movement ',
-        description:'We optimised data movement,running custom scripts,fine tuning infrastructure-completing migration in less than 48 hours',
-        image: dataHeavy,
-      },
-],
-    blazing: [
-      {
-        title: 'Millions of visits',
-        description:'We have built websites that handle millions of visitors, while still operating at peak performance',
-        image: blazingFast,
     },
     {
-        title:'Lightning speed - 90 + score',
-        description:"We have bulit websites that have consistency ranked hign in google page audits",
-        image: blazingFast,
+      title: 'Not just Text',
+      description: 'Editor supports MCQs, Coding editor and many such components built according to client’s needs',
+      image: interactive,
     },
     {
-        title:'Crazy Optimization',
-        description:'We implemented optimization techniques - lazy loading, dynamic image optimization, gzip compression & leveraged JAM stack',
-        image:blazingFast,
+      title: 'Version control, Auto save and more...',
+      description: 'WebRTC based editor, very fast. Supports large number of users. Content exportable as E-Books, PPT, Webpage.',
+      image: interactive,
     },
-    ],
-    award: [
-      {
-        title: 'Recognized by Google',
-        description:'We were trained by Google in partnership with the Ministry of Electronics and Information Technology - Appscale academy',
-        image: awardWinning,
-      },
-      {
-        title:'National News coverage',
-        description:'Our association with Google Appscale academy was conveyed in all major new-pappers ',
-        image: awardWinning,
-      },
-      {
-        title:'Loved by Users',
-        description:'4 + star rated and downloade by more than 10,000 users in playstore',
-        image: awardWinning,
-      },
-    ],
-  };
+  ],
+  data: [
+    {
+      title: '100,000,000 + records migrated',
+      description: 'Handling large amounts of data, we have migrated entire data store for a client with very minimal infra cost',
+      image: dataHeavy,
+    },
+    {
+      title: 'Tera bytes of fast data movement ',
+      description: 'We optimised data movement,running custom scripts,fine tuning infrastructure-completing migration in less than 48 hours',
+      image: dataHeavy,
+    },
+  ],
+  blazing: [
+    {
+      title: 'Millions of visits',
+      description: 'We have built websites that handle millions of visitors, while still operating at peak performance',
+      image: blazingFast,
+    },
+    {
+      title: 'Lightning speed - 90 + score',
+      description: "We have bulit websites that have consistency ranked hign in google page audits",
+      image: blazingFast,
+    },
+    {
+      title: 'Crazy Optimization',
+      description: 'We implemented optimization techniques - lazy loading, dynamic image optimization, gzip compression & leveraged JAM stack',
+      image: blazingFast,
+    },
+  ],
+  award: [
+    {
+      title: 'Recognized by Google',
+      description: 'We were trained by Google in partnership with the Ministry of Electronics and Information Technology - Appscale academy',
+      image: awardWinning,
+    },
+    {
+      title: 'National News coverage',
+      description: 'Our association with Google Appscale academy was conveyed in all major new-pappers ',
+      image: awardWinning,
+    },
+    {
+      title: 'Loved by Users',
+      description: '4 + star rated and downloade by more than 10,000 users in playstore',
+      image: awardWinning,
+    },
+  ],
+};
 
 function WorksSection() {
   const [activeCategory, setActiveCategory] = useState('learning');
@@ -265,16 +293,16 @@ function WorksSection() {
     { id: 'award', name: 'Award winning app', tags: ['#Flutter'] },
   ];
 
- 
+
   // Auto-rotate slides every 5 seconds
   useEffect(() => {
     const projects = projectsData[activeCategory] || [];
     if (projects.length === 0) return;
-    
+
     const interval = setInterval(() => {
       setActiveSlide((prevSlide) => (prevSlide + 1) % projects.length);
     }, 5000);
-    
+
     return () => clearInterval(interval);
   }, [activeCategory]);
 
@@ -295,7 +323,7 @@ function WorksSection() {
           {/* Left Column - Project Features */}
           <div className="project-features">
             {projects.map((project, index) => (
-              <div 
+              <div
                 key={index}
                 className={`project-feature ${index === activeSlide ? 'active' : ''}`}
                 onClick={() => setActiveSlide(index)}
@@ -312,7 +340,7 @@ function WorksSection() {
               </div>
             ))}
           </div>
-          
+
           {/* Right Column - Image Showcase */}
           <div className="image-showcase">
             {projects[activeSlide]?.isSpecialLayout ? (
@@ -327,8 +355,8 @@ function WorksSection() {
               </div>
             ) : (
               <div className="image-container">
-                <img 
-                  src={projects[activeSlide]?.image} 
+                <img
+                  src={projects[activeSlide]?.image}
                   alt={projects[activeSlide]?.title}
                 />
               </div>
@@ -342,12 +370,12 @@ function WorksSection() {
   return (
     <section className="works-section">
       <h2 className="section-title">Some of our works</h2>
-      
+
       {/* Category Tabs */}
       <div className="category-tabs">
         {categories.map((category) => (
-          <div 
-            key={category.id} 
+          <div
+            key={category.id}
             className={`category-tab ${activeCategory === category.id ? 'active' : ''}`}
             onClick={() => handleCategoryClick(category.id)}
           >
@@ -360,25 +388,25 @@ function WorksSection() {
           </div>
         ))}
       </div>
-      
+
       {/* Active Indicator */}
       <div className="active-indicator">
-        <div 
-          className="indicator-line" 
-          style={{ 
+        <div
+          className="indicator-line"
+          style={{
             left: `${categories.findIndex(cat => cat.id === activeCategory) * (100 / categories.length)}%`,
             width: `${100 / categories.length}%`
           }}
         ></div>
       </div>
-      
+
       {/* Projects Display */}
       {renderProjects()}
-      
+
       {/* Slide Indicators */}
       <div className="slide-indicators">
         {(projectsData[activeCategory] || []).map((_, index) => (
-          <button 
+          <button
             key={index}
             className={`indicator ${index === activeSlide ? 'active' : ''}`}
             onClick={() => setActiveSlide(index)}
@@ -389,94 +417,55 @@ function WorksSection() {
     </section>
   );
 }
- 
 
-const Card = ({ title, images, features }) => {
-  const [isHovered, setIsHovered] = useState(false);
-  
-  return (
-    <div 
-      className="w-full max-w-md bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className="relative overflow-hidden h-64">
-        <div 
-          className="transition-transform duration-1000 ease-in-out"
-          style={{ 
-            transform: isHovered ? 'translateY(-50%)' : 'translateY(0)',
-            height: '200%'
-          }}
-        >
-          {/* First image */}
-          <div className="h-64 w-full">
-            <img 
-              src="/api/placeholder/400/320" 
-              alt={`${title} preview 1`}
-              className="w-full h-full object-cover"
-            />
-          </div>
-          
-          {/* Second image (revealed on hover) */}
-          <div className="h-64 w-full">
-            <img 
-              src="/api/placeholder/400/320" 
-              alt={`${title} preview 2`}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-      </div>
-      
-      <div className="px-6 py-4">
-        <h2 className="text-xl font-bold mb-4">{title}</h2>
-        
-        <div className="flex flex-wrap gap-2 mb-2">
-          {features.map((feature, index) => (
-            <span 
-              key={index} 
-              className="px-3 py-1 bg-gray-100 text-gray-800 text-sm font-medium rounded-full"
-            >
-              {feature}
-            </span>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
-
- function CardsContainer() {
-  const cardsData = [
-    {
-      title: "Demo Portal",
-      images: [demo1, demo2],
-      features: ["Realtime Matching", "Calendar sync", "Notifications", "Reports"],
-    },
-    {
-      title: "Freelance platform",
-      images: [freelance1, freelance2],
-      features: ["Freelance Directory", "Custom Quotation", "Track Progress", "Rating & Reviews"],
-    }
+const BrandCarousel = () => {
+  const brands = [
+    { name: 'aatchitamizh', logo: aatchitamizh },
+    { name: 'BB', logo: BB },
+    { name: 'Captain', logo: captain },
+    { name: 'DMK', logo: DMK },
+    { name: 'Farmyng', logo: farmyng },
+    { name: 'Hyperlaunch', logo: hyperlaunch },
+    { name: 'Inesh', logo: inesh },
+    { name: 'IVB', logo: ivb },
+    { name: 'Jobzshala', logo: jobzshala },
+    { name: 'MoneyRush', logo: moneyrush },
+    { name: 'OVHQLogo', logo: ovhqlogo },
+    { name: 'schoolnet', logo: schoolnet },
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {cardsData.map((card, index) => (
-            <Card 
-              key={index}
-              title={card.title}
-              features={card.features}
-              images={card.images}
-            />
-          ))}
-        </div>
-      </div>
+    <div className="brand-carousel-container">
+      <h2 className="brand-carousel-heading">Brands that trust us.</h2>
+      <Swiper
+        spaceBetween={45}
+        slidesPerView={5}
+        loop={true}
+        speed={1000} 
+        autoplay={{
+          delay: 0, 
+          disableOnInteraction: false,
+        }}
+        modules={[Autoplay]}
+        breakpoints={{
+          320: { slidesPerView: 2 },
+          640: { slidesPerView: 3 },
+          768: { slidesPerView: 4 },
+          1024: { slidesPerView: 6 },
+        }}
+      >
+        {brands.map((brand, index) => (
+          <SwiperSlide key={index}>
+            <div className="brand-slide swiper-wrapper">
+              <img src={brand.logo} alt={brand.name} className="brand-logo" />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };
+
 
 // const ServicesSection = () => {
 //   return (
@@ -501,7 +490,7 @@ function AppscaleRecognition() {
 };
 
 
-function IdeaSection () {
+function IdeaSection() {
   return (
     <section className="idea-section">
       <h2 className="idea-title">Have an idea?</h2>
@@ -516,73 +505,73 @@ function IdeaSection () {
 };
 
 
-    
+
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-logo">
         </div>
-        
+
         <div className="footer-links">
           <div className='link-column'>
             <h3>About Us</h3>
             <ul>
               <li>< a href='#why us'>Why Us</a></li>
-               <li>< a href='#privacy terms'>Privacy Terms</a></li>
+              <li>< a href='#privacy terms'>Privacy Terms</a></li>
             </ul>
           </div>
           <div className="link-column">
             <h3>Portfolio</h3>
-             <ul>
+            <ul>
               <li><a href="#sales crm">Sales CRM</a></li>
-             <li><a href="#marketing jobverse">Marketing Jobverse</a></li>
-             <li><a href="#uthsav">Uthsav</a></li>
-             <li><a href="#learning platform">Learning platform</a></li>
-             <li><a href="#profitabill">Profitabill</a></li>
-               <li><a href="#baabee">Baabee Tv</a></li>
+              <li><a href="#marketing jobverse">Marketing Jobverse</a></li>
+              <li><a href="#uthsav">Uthsav</a></li>
+              <li><a href="#learning platform">Learning platform</a></li>
+              <li><a href="#profitabill">Profitabill</a></li>
+              <li><a href="#baabee">Baabee Tv</a></li>
               <li><a href="#inesh">Inesh</a></li>
-                <li><a href="#political">Political App</a></li>
-             <li><a href="#farmyung club app">Farmyng Club App</a></li>
+              <li><a href="#political">Political App</a></li>
+              <li><a href="#farmyung club app">Farmyng Club App</a></li>
             </ul>
-           </div>
-          
+          </div>
+
           <div className="link-column">
-             <h3>Offerings</h3>
-          <ul>
-         <li><a href="#Products">Products</a></li>
-               <li><a href="#Services">Services</a></li>
+            <h3>Offerings</h3>
+            <ul>
+              <li><a href="#Products">Products</a></li>
+              <li><a href="#Services">Services</a></li>
               <li><a href="#Web App">Web App</a></li>
-           <li><a href="# Development">Development</a></li> 
-            <li><a href="#Mobile App">Mobile App </a></li>
-             <li><a href="#Development">Development</a></li>
-           </ul>
+              <li><a href="# Development">Development</a></li>
+              <li><a href="#Mobile App">Mobile App </a></li>
+              <li><a href="#Development">Development</a></li>
+            </ul>
           </div>
           <div className="link-column">
-           <h3>Careers</h3>
-           <ul>
-           <li><a href="#">We are hiring!</a></li>
-             </ul>
-         </div>
-          
-         <div className="link-column">
-           <h1>CyberMind Works LLP</h1>
-             <ul>
-              <li><a href="mailto:info@cybermindworks.com"><br /> 
-                 10/15 K.M Towers - 1st Floor, Chakrapani Road,<br />
-              Guindy, Chennai, Tamil Nadu, 60004</a></li>
+            <h3>Careers</h3>
+            <ul>
+              <li><a href="#">We are hiring!</a></li>
+            </ul>
+          </div>
+
+          <div className="link-column">
+            <h1>CyberMind Works LLP</h1>
+            <ul>
+              <li><a href="mailto:info@cybermindworks.com"><br />
+                10/15 K.M Towers - 1st Floor, Chakrapani Road,<br />
+                Guindy, Chennai, Tamil Nadu, 60004</a></li>
               <li><a href="tel:+1234567890">ph: +01 75000 53535</a></li>
-               <li><a href='#'>www.cybermindworks.com</a></li>
-             <li><a href="mailto:info@cybermindworks.com">contact@cybermindworks.com</a></li>
-          </ul> 
+              <li><a href='#'>www.cybermindworks.com</a></li>
+              <li><a href="mailto:info@cybermindworks.com">contact@cybermindworks.com</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-<div className="copyright">
-     <p>Copyright © 2025, CyberMind Works | All rights reserved.</p>
-    </div>
-  </footer>
-);
- }
+      <div className="copyright">
+        <p>Copyright © 2025, CyberMind Works | All rights reserved.</p>
+      </div>
+    </footer>
+  );
+}
 
- export default App;
+export default App;

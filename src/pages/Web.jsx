@@ -32,9 +32,13 @@ import { Autoplay } from 'swiper/modules';
 import Farmyng from '../assets/farm2.webp';
 import inesh2 from '../assets/inesh2.webp';
 import dmkImage from '../assets/dmk2.webp';
-
-
-const Banner = () => {
+import marketingJobverseImg from '../assets/marketing2.webp';
+import usthav from '../assets/uthsav.webp';
+import sales from '../assets/sales1.webp';
+import learn from '../assets/learn2.webp';
+import baabee from '../assets/baabee2.webp';
+import './Web.css';
+const Collection = () => {
   const serviceImages = [ban1,ban2,ban4,ban5];
 
   return (
@@ -54,10 +58,10 @@ const Banner = () => {
 
 
 
-const MobileAppOverview = () => {
+const Webreview = () => {
   return (
     <div className="mobile-app-overview">
-      <h1>Mobile Application Development Overview</h1>
+      <h1>Web Application Development Overview</h1>
       <p>
         We keep experimenting with latest technologies and have successfully created mobile applications using Flutter and React native. Most of
          our web applications are Progressive Web Apps by default. We have developed mobile applications in various sectors including but not limited
@@ -73,7 +77,7 @@ const MobileAppOverview = () => {
 
 
 
-const Carousel = () => {
+const Slider = () => {
   const brands = [
     { name: 'aatchitamizh', logo: aatchitamizh },
     { name: 'BB', logo: BB },
@@ -135,7 +139,7 @@ const techLogos = [
   { src: aws, alt: 'AWS' },
 ];
 
-const TechnologiesSection = () => {
+const Technology= () => {
   return (
     <div className="technologies-container">
       <h2 className="tech-title">Technologies we use</h2>
@@ -153,28 +157,48 @@ const TechnologiesSection = () => {
 
 
 
-function Project() {
+function Data() {
   // Portfolio data array
   const portfolioData = [
-      
-    {
-      id: 6,
-      title: 'Farmyng',
-      image: Farmyng,
+      {
+      id: 4,
+      title: 'Marketing Jobverse',
+      image: marketingJobverseImg,
       gradient: 'orange-gradient',
       features: ['Subscription', 'Freelance Directory', 'Job Search', 'JobAlerts'],
     },
     {
-      id: 11,
-      title: 'inesh',
-      image: inesh2,
+      id: 5,
+      title: 'Uthsav',
+      image: usthav,
       gradient: 'purple-gradient',
       features: ['LMS', 'Job Search'],
     },
     {
-      id: 12,
-      title: 'Sakkarapani',
-      image: dmkImage,
+      id: 7,
+      title: 'Sales CRM',
+      image: sales,
+      gradient: 'purple-gradient',
+      features: ['LMS', 'Job Search'],
+    },
+    {
+      id: 8,
+      title: 'Learning Platform',
+      image: learn,
+      gradient: 'orange-gradient',
+      features: ['Subscription', 'Freelance Directory', 'Job Search', 'JobAlerts'],
+    },
+     {
+      id: 10,
+      title: 'BabeeTv',
+      image: baabee,
+      gradient: 'orange-gradient',
+      features: ['Subscription', 'Freelance Directory', 'Job Search', 'JobAlerts'],
+    },
+     {
+      id: 8,
+      title: 'Learning Platform',
+      image: learn,
       gradient: 'orange-gradient',
       features: ['Subscription', 'Freelance Directory', 'Job Search', 'JobAlerts'],
     },
@@ -203,8 +227,8 @@ function Project() {
   );
 }
 
-export default Banner;
-export  {MobileAppOverview};
-export{Carousel};
-export { TechnologiesSection};
-export {Project};
+export default Collection;
+export  {Webreview};
+export{Slider};
+export { Technology};
+export {Data};

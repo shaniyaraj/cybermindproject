@@ -219,7 +219,7 @@ const BlogPage = () => {
           filteredBlogPosts.map(post => (
             <a href={post.url} key={post.id} className="blog-card-link">
               <div className="blog-card">
-                <div className="blog-card-image" style={{ backgroundColor: '#1e2937' }}>
+                <div className="blog-card-image" >
                   <img src={post.image} alt={post.title} />
                 </div>
                 <div className="blog-card-content">
